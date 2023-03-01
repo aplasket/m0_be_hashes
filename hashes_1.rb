@@ -1,30 +1,35 @@
 
-Activity:
+# Activity:
 
 # In the below exercises, write code that achieves
 # the desired result. To check your work, run this
 # file by entering the following command in your Terminal: 
 # `ruby hashes_1.rb`
 
-foods = {"apples": 23, "grapes": 507, "eggs": 48}
-p zoo
+foods = { "apples": 23, "grapes": 507, "eggs": 48 }
+p foods
 
 # Write code that prints all of the 'keys' of the foods variable 
 # you created above:
-# YOUR CODE HERE
+p foods.keys
+#=> [:apples, :grapes, :eggs]
 
 # Write code that prints all of the 'values' of the foods variable 
 # you created above:
-# YOUR CODE HERE
+p foods.values
+#=> [23, 507, 48]
+
 
 # Write code that prints the value of the second food of the foods variable 
 # you created above:
-# YOUR CODE HERE
+p foods[:grapes]
+#=>507
 
 # Write code that adds a food to the foods hash. 
 # Then, print the updated hash:
-# YOUR CODE HERE
-
+p foods[:bananas] = 98
+p foods
+#=> {:apples=>23, :grapes=>507, :eggs=>48, :bananas=>98}
 
 #-------------------
 # Part 2: Email
@@ -32,21 +37,35 @@ p zoo
 
 
 # Think about all the pieces of information associated with one single email in your inbox.
-# It has a sender, a subject, ...
+# It has a sender, a subject, receiver, a date, content, ....
 
 # Declare a variable that stores hash. Each key should be an attribute of an email and each
 # value should be some appropriate value for that key. Work to have at least 5 key-value pairs.
 
+email = {
+  sender: "Brian",
+  receiver: "Alex",
+  subject: "Please open immediately!",
+  timestamp_email: "11:37 AM December 31, 2009",
+  content: "I need $1m immediately, please wire to #45921747192. Thanks!"
+}
+
 # Write code that prints your email hash to the terminal.
+p email
+#=> {:sender=>"Brian", :receiver=>"Alex", :subject=>"Please open immediately!", :timestamp_email=>"11:37 AM December 31, 2009", :content=>"I need $1m immediately, please wire to #45921747192. Thanks!"}
 
 
 # Write code that prints all of the 'keys' of the email hash 
 # you created above:
-# YOUR CODE HERE
+p email.keys
+#=> [:sender, :receiver, :subject, :timestamp_email, :content]
+
 
 # Write code that prints all of the 'values' of the email hash 
 # you created above:
-# YOUR CODE HERE
+p email.values
+#=> ["Brian", "Alex", "Please open immediately!", "11:37 AM December 31, 2009", "I need $1m immediately, please wire to #45921747192. Thanks!"]
+
 
 
 #-------------------
@@ -97,3 +116,48 @@ p posts[0]
 # YOU DO: Create an array of at least 3 EMAIL Hashes, using the same 
 # key-value pairs you used in your email Hash above.
 # Then, print the email Array to the Terminal.
+
+emails = ["Please open immediately", "Phishing flag!", "unsubscribe"]
+
+emails = [
+{
+  sender: "Brian",
+  receiver: "Alex",
+  subject: "Please open immediately!",
+  timestamp_email: "11:37 AM December 31, 2009",
+  content: "I need $1m immediately, please wire to #45921747192. Thanks!"
+},
+{
+  sender: "Alex",
+  receiver: "IT",
+  subject: "Phishing flag!",
+  timestamp_email: "11:39 AM December 31, 2009",
+  content: "Hey IT, please note this phishing scam sent to my email below."
+},
+
+{
+  sender: "alex",
+  receiver: "spam account",
+  subject: "unsubscribe, reported",
+  timestamp_email: "11:56 AM December 31, 2009",
+  content: "unsubscribe me from this list"
+}
+
+]
+
+p emails
+# => [{:sender=>"Brian", :receiver=>"Alex", :subject=>"Please open immediately!", 
+# :timestamp_email=>"11:37 AM December 31, 2009", 
+# :content=>"I need $1m immediately, please wire to #45921747192. Thanks!"}, 
+# {:sender=>"Alex", :receiver=>"IT", :subject=>"Phishing flag!", 
+# :timestamp_email=>"11:39 AM December 31, 2009", 
+# :content=>"Hey IT, please note this phishing scam sent to my email below."}, 
+# {:sender=>"alex", :receiver=>"spam account", :subject=>"unsubscribe, reported",
+# :timestamp_email=>"11:56 AM December 31, 2009", 
+# :content=>"unsubscribe me from this list"}]
+
+p emails[2]
+# => {:sender=>"alex", :receiver=>"spam account", 
+# :subject=>"unsubscribe, reported", 
+# :timestamp_email=>"11:56 AM December 31, 2009", 
+# :content=>"unsubscribe me from this list"}
